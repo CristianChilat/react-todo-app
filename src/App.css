@@ -1,0 +1,67 @@
+body {
+    background-color: #1B1A55;
+    margin: 0 auto;
+    width: 360px;
+    border: 5px solid #17133e;
+    font-family: "Inter", serif;
+}
+
+.app {
+    height: 800px;
+    border-radius: 10px;
+    margin: 2em;
+}
+
+.app h3 {
+    margin-top: 100px;
+    color: white;
+}
+
+ul.todoList {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.todoList li {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}
+
+ul.todoList li input[type="checkbox"]{
+    width: 36px;
+    height: 36px;
+    accent-color: #4DAFE5;
+    background: red;
+    border-radius: 10px;
+    border: 1px solid red;
+}
+
+
+
+ul.todoList li div {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.iconAddTodo {
+    background-color: #41C9E2;
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+
+}
+
+@media screen and (max-width: 360px) {
+   div.iconAddTodo{
+       position: fixed;
+       bottom: 1em;
+       right: 1em;
+   }
+}
+
