@@ -17,9 +17,13 @@ function App() {
                     </div>
                 </li>
             </ul>
-            <div className="iconAddTodo">
-                <Icon path={mdiPlus} size={2.5} />
-            </div>
+            <button
+                className="iconAddTodo"
+                onClick={() => (alert("Add Task"))}
+            >
+                <span className={'label'}>Add Todo</span>
+                <Icon className={'icon'} path={mdiPlus} size={2}/>
+            </button>
         </div>
     );
 }

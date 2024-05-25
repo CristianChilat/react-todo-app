@@ -49,19 +49,47 @@ ul.todoList li div {
     justify-content: space-between;
 }
 
-div.iconAddTodo {
+button.iconAddTodo {
     background-color: #41C9E2;
-    width: 61px;
-    height: 61px;
-    border-radius: 50%;
+    width: 100%;
+    height: 41px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    font-size: 1.1em;
 
 }
 
+button.iconAddTodo .icon{
+    display: none;
+}
+
 @media screen and (max-width: 360px) {
-   div.iconAddTodo{
+
+
+    button.iconAddTodo {
+        background-color: #41C9E2;
+        width: 61px;
+        height: 61px;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        align-items: center;
+
+    }
+
+   button.iconAddTodo{
        position: fixed;
        bottom: 1em;
        right: 1em;
    }
+
+    button.iconAddTodo .icon{
+        display: block;
+    }
+
+    button.iconAddTodo .label{
+        display: none;
+    }
 }
 
