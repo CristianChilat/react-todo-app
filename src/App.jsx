@@ -1,8 +1,12 @@
 import './App.css';
 import Icon from '@mdi/react';
-import { mdiPencil, mdiPlus} from '@mdi/js';
+import { mdiPlus, mdiDelete} from '@mdi/js';
+import {useState} from "react";
 
 function App() {
+    const [todos, setTodos] = useState([]);
+    const [value, setValue] = useState('');
+
     return (
         <div className={"app"}>
             <h3>
@@ -10,20 +14,32 @@ function App() {
             </h3>
             <ul className={'todoList'}>
                 <li>
-                    <input type="checkbox"/>
                     <div>
-                        <span>Hello World</span>
-                        <Icon path={mdiPencil} size={0.8} color="red" />
+                        <input onChange={event => setValue(event.target.value)} type="text"/>
                     </div>
                 </li>
             </ul>
             <button
                 className="iconAddTodo"
-                onClick={() => (alert("Add Task"))}
+                onClick={() => setTodos([...todos, value])}
             >
                 <span className={'label'}>Add Todo</span>
                 <Icon className={'icon'} path={mdiPlus} size={2}/>
             </button>
+            
+            <ul className={'todoList'}>
+                {todos.map((todo) => (
+                    <li>
+                        <input
+                            type="checkbox"
+                        />
+                        <div>
+                            <span>{todo}</span>
+                            <Icon path={mdiDelete} size={1} />
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
